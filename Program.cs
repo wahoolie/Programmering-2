@@ -1,20 +1,28 @@
 ﻿using System;
 
-namespace MyApp // Note: actual namespace depends on the project name.
+namespace Programmering // Note: actual namespace depends on the project name.
 {
     class Program
     {
-        public static void Main()
+        public static void Main(string [] args)
         {
-            Fordon S = new Fordon();
-            S.setNamn("Tesla");
-            S.setModell("Model S");
-            S.setFärg("Röd");
+            int menyval = 1;
+            Fordonlista f1 = new Fordonlista();
+            while(menyval != 0)
+            {
+                Console.WriteLine("Fordonsregister");
+                Console.WriteLine("================");
+                Console.WriteLine("1. Registreara Nytt Fordon");
+                Console.WriteLine("2. Skriv ut alla Fordon i listan");
+                Console.WriteLine("0. Avsluta");
+                Console.WriteLine("Ange ditt val: ");
+                menyval = Convert.ToInt32(Console.ReadLine());
+                if (menyval == 1)
+                    f1.nyttFordon();
+                else if (menyval == 2)
+                    f1.skrivUt();
 
-            Fordon Y = new Fordon();
-            Y.setNamn("Tesla");
-            Y.setModell("Model Y");
-            Y.setFärg("Vit");
+            }
         }
     }
 }
